@@ -3,19 +3,51 @@ console.log('***** Music Collection *****')
 let myCollection = [];
 
 function addToCollection(collection, title, artist, yearPublished) {
-  let collectionObject = {
+  collection = {
     Title: title,
     Artist: artist,
     PublishedYear: yearPublished,
   }
+  //myCollection.push(collection);
   myCollection.push(collection);
-  myCollection.push(collectionObject);
   
-  return collectionObject;
+  return collection;
 }
 
-console.log(addToCollection('Kpop', 'DDU-DU DDU-DU', 'BlackPink', 2018));
+console.log(addToCollection('Kpop', 'Ice Cream', 'BlackPink', 2018));
 
+//Use and Test the addToCollection Function:
+console.log(addToCollection('Kpop', 'DDU-DU DDU-DU', 'BlackPink', 2018));
+console.log(addToCollection('Rap', 'The Real Slim Shady', 'Eminem', 2010));
+console.log(addToCollection('Pop', 'The Way You Make Me Feel', 'Michael Jackson', 2009));
+console.log(addToCollection('Pop', 'Billie Jean', 'Michael Jackson', 2018));
+console.log(addToCollection('Rock', 'Dont Stop Me Now', 'Queen', 1979));
+console.log(addToCollection('Rock', 'I Want To Break Free', 'Queen', 2018));
+
+console.log(myCollection);
+
+//Create a Function showCollection.
+function showCollection (collection) {
+  for (let collectionItem of collection) {
+    console.log(collectionItem.Title + " by " + collectionItem.Artist + ", published by " + collectionItem.PublishedYear);
+  }
+}
+
+console.log(showCollection(myCollection));
+
+//Create a function findByArtist
+function findByArtist (collection, artist) {
+  //This array would hold any matches.
+  let emptyArray = [];
+  for (let collectionItem of collection) {
+    if (collectionItem.Artist === artist) {
+      console.log(true);
+    }
+  }
+  return emptyArray;
+}
+
+console.log(findByArtist(myCollection, 'Eminem'));
 
 
 
