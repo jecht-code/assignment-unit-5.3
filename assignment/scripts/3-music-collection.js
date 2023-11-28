@@ -41,13 +41,14 @@ function findByArtist (collection, artist) {
   let emptyArray = [];
   for (let collectionItem of collection) {
     if (collectionItem.Artist === artist) {
-      console.log(true);
+      emptyArray.push(collectionItem);
     }
   }
   return emptyArray;
 }
 
 console.log(findByArtist(myCollection, 'Eminem'));
+console.log(findByArtist(myCollection, 'Taylor Swift'));
 
 
 
